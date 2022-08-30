@@ -51,14 +51,14 @@ def get_stored_demo(data_path, index):
     obs[i].front_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].front_depth, 
                                                                                     obs[i].misc['front_camera_extrinsics'],
                                                                                     obs[i].misc['front_camera_intrinsics'])
-    obs[i].left_shoulder_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].front_depth, 
+    obs[i].left_shoulder_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].left_shoulder_depth, 
                                                                                             obs[i].misc['left_shoulder_camera_extrinsics'],
                                                                                             obs[i].misc['left_shoulder_camera_intrinsics'])
-    obs[i].right_shoulder_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].front_depth, 
+    obs[i].right_shoulder_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].right_shoulder_depth, 
                                                                                              obs[i].misc['right_shoulder_camera_extrinsics'],
                                                                                              obs[i].misc['right_shoulder_camera_intrinsics'])
-    obs[i].wrist_shoulder_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].front_depth, 
-                                                                                             obs[i].misc['wrist_camera_extrinsics'],
-                                                                                             obs[i].misc['wrist_camera_intrinsics'])
+    obs[i].wrist_point_cloud = VisionSensor.pointcloud_from_depth_and_camera_params(obs[i].wrist_depth, 
+                                                                                           obs[i].misc['wrist_camera_extrinsics'],
+                                                                                           obs[i].misc['wrist_camera_intrinsics'])
     
   return obs
