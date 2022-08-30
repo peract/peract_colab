@@ -28,3 +28,8 @@ def point_to_voxel_index(
         np.floor((point - bb_mins) / (res + 1e-12)).astype(
             np.int32), dims_m_one)
     return voxel_indicy
+
+
+def stack_on_channel(x):
+    # expect (B, T, C, ...)
+    return torch.cat(torch.split(x, 1, dim=1), dim=2).squeeze(1)
