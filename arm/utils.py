@@ -40,6 +40,20 @@ def stack_on_channel(x):
     return torch.cat(torch.split(x, 1, dim=1), dim=2).squeeze(1)
 
 
+def _from_trimesh_scene(
+        trimesh_scene, bg_color=None, ambient_light=None):
+    # convert trimesh geometries to pyrender geometries
+    geometries = {name: pyrender.Mesh.from_trimesh(geom, smooth=False)
+                  for name, geom in trimesh_scene.geometry.items()}
+    # create the pyrender scene object
+    scene_pr = pyrender.Scene(bg_color=bg_color, ambient_light=ambient_light)
+    # add every node with geometry to the pyrender scene
+    for node in trimesh_scene.graph.nodes_geometry:
+        pose, geom_name = trimesh_scene.graph[node]
+        scene_pr.add(geometries[geom_name], pose=pose)
+    return scene_pr
+
+
 def create_voxel_scene(
         voxel_grid: np.ndarray,
         q_attention: np.ndarray = None,
