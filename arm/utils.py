@@ -40,6 +40,22 @@ def stack_on_channel(x):
     return torch.cat(torch.split(x, 1, dim=1), dim=2).squeeze(1)
 
 
+def _compute_initial_camera_pose(scene):
+    # Adapted from:
+    # https://github.com/mmatl/pyrender/blob/master/pyrender/viewer.py#L1032
+    centroid = scene.centroid
+    scale = scene.scale
+    if scale == 0.0:
+        scale = DEFAULT_SCENE_SCALE
+    s2 = 1.0 / np.sqrt(2.0)
+    cp = np.eye(4)
+    cp[:3, :3] = np.array([[0.0, -s2, s2], [1.0, 0.0, 0.0], [0.0, s2, s2]])
+    hfov = np.pi / 6.0
+    dist = scale / (2.0 * np.tan(hfov))
+    cp[:3, 3] = dist * np.array([1.0, 0.0, 1.0]) + centroid
+    return cp
+
+
 def _from_trimesh_scene(
         trimesh_scene, bg_color=None, ambient_light=None):
     # convert trimesh geometries to pyrender geometries
