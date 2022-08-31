@@ -134,7 +134,9 @@ def visualise_voxel(voxel_grid: np.ndarray,
                     voxel_size: float = 0.1,
                     offscreen_renderer: pyrender.OffscreenRenderer = None,
                     show_bb: bool = False,
-                    alpha: float = 0.5):
+                    alpha: float = 0.5,
+                    render_gripper=False,
+                    gripper_pose=None):
     scene = create_voxel_scene(
         voxel_grid, q_attention, highlight_coordinate, highlight_gt_coordinate,
         highlight_alpha, voxel_size,
@@ -153,5 +155,14 @@ def visualise_voxel(voxel_grid: np.ndarray,
         t = Trackball(p, (r.viewport_width, r.viewport_height), s.scale, s.centroid)
         t.rotate(rotation_amount, np.array([0.0, 0.0, 1.0]))
         s.add(cam, pose=t.pose)
+
+        if render_gripper:
+        	gripper_trimesh = trimesh.load('meshes/hand.dae')
+        	gripper_trimesh.vertices *= (voxel_size * 100.0)
+ 			radii = np.linalg.norm(gripper_trimesh.vertices - gripper_trimesh.center_mass, axis=1)
+ 			gripper_trimesh.visual.vertex_colors = trimesh.visual.interpolate(radii * (voxel_size * 100), color_map='winter')
+ 			gripper_mesh = pyrender.Mesh.from_trimesh(gripper_trimesh, poses=np.array([gripper_pose]), smooth=False)
+ 			s.add(gripper_mesh)
+
         color, depth = r.render(s)
         return color.copy()
