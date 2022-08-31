@@ -20,6 +20,11 @@ def quaternion_to_discrete_euler(quaternion, resolution):
     return disc
 
 
+def discrete_euler_to_quaternion(discrete_euler, resolution):
+    euluer = (discrete_euler * resolution) - 180
+    return Rotation.from_euler('xyz', euluer, degrees=True).as_quat()
+
+
 def point_to_voxel_index(
         point: np.ndarray,
         voxel_size: np.ndarray,
