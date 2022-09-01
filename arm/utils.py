@@ -52,7 +52,7 @@ def _compute_initial_camera_pose(scene):
     scale = scene.scale
     # if scale == 0.0:
     #     scale = DEFAULT_SCENE_SCALE
-    scale = 4.5
+    scale = 4.0
     s2 = 1.0 / np.sqrt(2.0)
     cp = np.eye(4)
     cp[:3, :3] = np.array([[0.0, -s2, s2], [1.0, 0.0, 0.0], [0.0, s2, s2]])
@@ -146,7 +146,7 @@ def visualise_voxel(voxel_grid: np.ndarray,
         scene.show()
     else:
         r = offscreen_renderer or pyrender.OffscreenRenderer(
-            viewport_width=640, viewport_height=480, point_size=1.0)
+            viewport_width=1920, viewport_height=1080, point_size=1.0)
         s = _from_trimesh_scene(
             scene, ambient_light=[0.8, 0.8, 0.8],
             bg_color=[1.0, 1.0, 1.0])
