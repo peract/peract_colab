@@ -167,3 +167,20 @@ def visualise_voxel(voxel_grid: np.ndarray,
             s.add(gripper_mesh) 
         color, depth = r.render(s)
         return color.copy()
+
+
+def get_gripper_render_pose(voxel_scale, scene_bound_origin, continuous_trans, continuous_quat):
+	# finger tip to gripper offset
+	offset = np.array([[1, 0, 0, 0],
+	                   [0, 1, 0, 0],
+	                   [0, 0, 1, 0.1*voxel_scale],
+	                   [0, 0, 0, 1]])
+
+
+	# scale and translate by origin
+	translation = (continuous_trans - (np.array(scene_bound_origin[:3]))) * voxel_scale
+	mat = np.eye(4,4)
+	mat[:3,:3] = Rotation.from_quat([continuous_quat[0], continuous_quat[1], continuous_quat[2], continuous_quat[3]]).as_matrix()
+	offset_mat = np.matmul(mat, offset)
+	mat[:3,3] = translation - offset_mat[:3,3]
+	return mat
