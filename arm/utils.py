@@ -50,8 +50,9 @@ def _compute_initial_camera_pose(scene):
     # https://github.com/mmatl/pyrender/blob/master/pyrender/viewer.py#L1032
     centroid = scene.centroid
     scale = scene.scale
-    if scale == 0.0:
-        scale = DEFAULT_SCENE_SCALE
+    # if scale == 0.0:
+    #     scale = DEFAULT_SCENE_SCALE
+    scale = 4.5
     s2 = 1.0 / np.sqrt(2.0)
     cp = np.eye(4)
     cp[:3, :3] = np.array([[0.0, -s2, s2], [1.0, 0.0, 0.0], [0.0, s2, s2]])
