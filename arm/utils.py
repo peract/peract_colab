@@ -157,12 +157,11 @@ def visualise_voxel(voxel_grid: np.ndarray,
         s.add(cam, pose=t.pose)
 
         if render_gripper:
-        	gripper_trimesh = trimesh.load('meshes/hand.dae')
-        	gripper_trimesh.vertices *= (voxel_size * 100.0)
- 			radii = np.linalg.norm(gripper_trimesh.vertices - gripper_trimesh.center_mass, axis=1)
- 			gripper_trimesh.visual.vertex_colors = trimesh.visual.interpolate(radii * (voxel_size * 100), color_map='winter')
- 			gripper_mesh = pyrender.Mesh.from_trimesh(gripper_trimesh, poses=np.array([gripper_pose]), smooth=False)
- 			s.add(gripper_mesh)
-
+            gripper_trimesh = trimesh.load('meshes/hand.dae')
+            gripper_trimesh.vertices *= (voxel_size * 100.0)
+            radii = np.linalg.norm(gripper_trimesh.vertices - gripper_trimesh.center_mass, axis=1)
+            gripper_trimesh.visual.vertex_colors = trimesh.visual.interpolate(radii * (voxel_size * 100), color_map='winter')
+            gripper_mesh = pyrender.Mesh.from_trimesh(gripper_trimesh, poses=np.array([gripper_pose]), smooth=False)
+            s.add(gripper_mesh) 
         color, depth = r.render(s)
         return color.copy()
