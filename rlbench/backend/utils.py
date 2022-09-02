@@ -99,7 +99,8 @@ def extract_obs(obs: Observation,
           obs_dict['%s_camera_intrinsics' % camera_name] = obs.misc['%s_camera_intrinsics' % camera_name]
 
     # add timestep to low_dim_state
-    time = (1. - (t / float(EPISODE_LENGTH - 1))) * 2. - 1.
+    episode_length = 10 # TODO fix this
+    time = (1. - (t / float(episode_length - 1))) * 2. - 1.
     obs_dict['low_dim_state'] = np.concatenate(
         [obs_dict['low_dim_state'], [time]]).astype(np.float32)
 
