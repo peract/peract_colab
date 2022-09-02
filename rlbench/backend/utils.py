@@ -52,9 +52,10 @@ def image_to_float_array(image, scale_factor=None):
 
 
 def extract_obs(obs: Observation,
-                 t: int = 0,
-                 prev_action = None,
-                 channels_last: bool = False):
+				cameras,
+                t: int = 0,
+                prev_action = None,
+                channels_last: bool = False):
 
     obs.joint_velocities = None
     grip_mat = obs.gripper_matrix
@@ -93,7 +94,7 @@ def extract_obs(obs: Observation,
     for (k, v) in [(k, v) for k, v in obs_dict.items() if 'point_cloud' in k]:
         obs_dict[k] = v.astype(np.float32)
 
-    for camera_name in CAMERAS:
+    for camera_name in cameras:
           obs_dict['%s_camera_extrinsics' % camera_name] = obs.misc['%s_camera_extrinsics' % camera_name]
           obs_dict['%s_camera_intrinsics' % camera_name] = obs.misc['%s_camera_intrinsics' % camera_name]
 
