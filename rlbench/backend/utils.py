@@ -51,7 +51,7 @@ def image_to_float_array(image, scale_factor=None):
   return scaled_array
 
 
-def _extract_obs(obs: Observation,
+def extract_obs(obs: Observation,
                  t: int = 0,
                  prev_action = None,
                  channels_last: bool = False):
