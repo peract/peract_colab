@@ -1,3 +1,5 @@
+# From https://github.com/stepjam/YARR/blob/main/yarr/utils/observation_type.py
+
 from typing import Type
 import numpy as np
 

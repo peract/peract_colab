@@ -1,3 +1,5 @@
+# From https://github.com/stepjam/PyRep/blob/master/pyrep/objects/vision_sensor.py
+
 import numpy as np
 
 class VisionSensor():

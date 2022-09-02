@@ -1,3 +1,5 @@
+# From https://github.com/cybertronai/pytorch-lamb/blob/master/pytorch_lamb/lamb.py
+
 """Lamb optimizer."""
 
 import collections

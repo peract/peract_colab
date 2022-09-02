@@ -1,3 +1,5 @@
+# From https://github.com/stepjam/YARR/blob/main/yarr/replay_buffer/uniform_replay_buffer.py
+
 """The standard DQN replay memory.
 
 This implementation is an out-of-graph replay memory + in-graph wrapper. It

@@ -1,3 +1,5 @@
+# Adapted from: https://github.com/stepjam/ARM/blob/main/arm/utils.py
+
 import torch
 import numpy as np
 from scipy.spatial.transform import Rotation

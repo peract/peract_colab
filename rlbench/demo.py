@@ -1,5 +1,6 @@
-import numpy as np
+# From https://github.com/stepjam/RLBench/blob/master/rlbench/demo.py
 
+import numpy as np
 
 class Demo(object):
 

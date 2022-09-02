@@ -1,3 +1,5 @@
+# Adapted from https://github.com/stepjam/ARM/blob/main/arm/network_utils.py
+
 import copy
 from typing import List, Union
 

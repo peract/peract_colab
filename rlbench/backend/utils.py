@@ -1,7 +1,6 @@
 import numpy as np
 from rlbench.backend.observation import Observation
 
-# Adapted from https://github.com/stepjam/YARR/blob/main/yarr/envs/rlbench_env.py
 
 REMOVE_KEYS = ['joint_velocities', 'joint_positions', 'joint_forces',
                'gripper_open', 'gripper_pose',
@@ -9,6 +8,7 @@ REMOVE_KEYS = ['joint_velocities', 'joint_positions', 'joint_forces',
                'task_low_dim_state', 'misc']
 
 
+# From https://github.com/stepjam/RLBench/blob/master/rlbench/backend/utils.py
 def image_to_float_array(image, scale_factor=None):
   """Recovers the depth values from an image.
 
@@ -51,6 +51,7 @@ def image_to_float_array(image, scale_factor=None):
   return scaled_array
 
 
+# Adapted from https://github.com/stepjam/YARR/blob/main/yarr/envs/rlbench_env.py
 def extract_obs(obs: Observation,
 				cameras,
                 t: int = 0,
