@@ -9,7 +9,7 @@ meant to complement the [paper](https://peract.github.io/) by providing concrete
 ## Credit
 This notebook heavily builds on data-loading and pre-preprocessing code from [`ARM`](https://github.com/stepjam/ARM), [`YARR`](https://github.com/stepjam/YARR), [`PyRep`](https://github.com/stepjam/PyRep), [`RLBench`](https://github.com/stepjam/RLBench) by [Stephen James et al.](https://stepjam.github.io/) The [PerceiverIO](https://arxiv.org/abs/2107.14795) code is adapted from [`perceiver-pytorch`](https://github.com/lucidrains/perceiver-pytorch) by [Phil Wang (lucidrains)](https://github.com/lucidrains). The optimizer is based on [this LAMB implementation](https://github.com/cybertronai/pytorch-lamb). See the corresponding licenses below.
 
-<img src="https://peract.github.io/media/figures/sim_task.jpg" alt="drawing" style="width:100px;"/>
+<img src="https://peract.github.io/media/figures/sim_task.jpg" alt="drawing"/>
 
 ## Licenses
 - [ARM License](https://github.com/stepjam/ARM/blob/main/LICENSE)
