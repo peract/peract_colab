@@ -30,7 +30,7 @@ This notebook heavily builds on data-loading and pre-preprocessing code from [`A
 
 ## Citations 
 
-**PerAct** (pending)
+**PerAct**
 ```
 @inproceedings{shridhar2022peract,
   title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation},
