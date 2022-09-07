@@ -1,4 +1,15 @@
 # **PerAct** 
+
+<p align="center">
+    <a href="https://peract.github.io/" target="_blank">
+        <img src="https://img.shields.io/badge/ai2thor-website-blue">
+    </a>
+    </a>
+    <a href="https://colab.research.google.com/drive/1wpaosDS94S0rmtGmdnP0J1TjS7mEM14V?usp=sharing" target="_blank">
+        <img src="https://img.shields.io/badge/colab-minimal&nbsp;template-orange">
+    </a>
+</p>
+
 ## Annotated Tutorial 
 
 **Important: Before starting, change the runtime to GPU.**
@@ -18,3 +29,52 @@ This notebook heavily builds on data-loading and pre-preprocessing code from [`A
 - [PyRep License (MIT)](https://github.com/stepjam/PyRep/blob/master/LICENSE)
 - [Perceiver PyTorch License (MIT)](https://github.com/lucidrains/perceiver-pytorch/blob/main/LICENSE)
 - [LAMB License (MIT)](https://github.com/cybertronai/pytorch-lamb/blob/master/LICENSE)
+
+
+## Citations 
+
+**PerAct** (pending)
+```
+@inproceedings{shridhar2022peract,
+  title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation},
+  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
+  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
+  year      = {2022},
+}
+```
+
+**C2FARM**
+```
+@inproceedings{james2022coarse,
+  title={Coarse-to-fine q-attention: Efficient learning for visual robotic manipulation via discretisation},
+  author={James, Stephen and Wada, Kentaro and Laidlow, Tristan and Davison, Andrew J},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={13739--13748},
+  year={2022}
+}
+```
+
+**PerceiverIO**
+```
+@article{jaegle2021perceiver,
+  title={Perceiver io: A general architecture for structured inputs \& outputs},
+  author={Jaegle, Andrew and Borgeaud, Sebastian and Alayrac, Jean-Baptiste and Doersch, Carl and Ionescu, Catalin and Ding, David and Koppula, Skanda and Zoran, Daniel and Brock, Andrew and Shelhamer, Evan and others},
+  journal={arXiv preprint arXiv:2107.14795},
+  year={2021}
+}
+```
+
+
+**RLBench**
+```
+@article{james2020rlbench,
+  title={Rlbench: The robot learning benchmark \& learning environment},
+  author={James, Stephen and Ma, Zicong and Arrojo, David Rovick and Davison, Andrew J},
+  journal={IEEE Robotics and Automation Letters},
+  volume={5},
+  number={2},
+  pages={3019--3026},
+  year={2020},
+  publisher={IEEE}
+}
+```
