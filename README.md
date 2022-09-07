@@ -3,7 +3,7 @@
 <p align="left">
     </a>
     <a href="https://colab.research.google.com/drive/1wpaosDS94S0rmtGmdnP0J1TjS7mEM14V?usp=sharing" target="_blank">
-        <img src="https://img.shields.io/badge/colab-minimal&nbsp;template-orange">
+        <img src="https://img.shields.io/badge/colab-minimal">
     </a>
 </p>
 
