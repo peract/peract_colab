@@ -2,7 +2,7 @@
 
 <p align="left">
     </a>
-    <a href="https://colab.research.google.com/drive/1wpaosDS94S0rmtGmdnP0J1TjS7mEM14V?usp=sharing" target="_blank">
+    <a href="https://colab.research.google.com/drive/1HAqemP4cE81SQ6QO1-N85j5bF4C0qLs0?usp=sharing" target="_blank">
         <img src="https://img.shields.io/badge/colab-minimal">
     </a>
 </p>
